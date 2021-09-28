@@ -1036,9 +1036,9 @@ include 'views/layout/footer_files.php';
 		var pickup_date_time= $('#pickup_date_time').val();
 		pickup_date_time_arr = pickup_date_time.split(' ');
 		pickup_time_arr = pickup_date_time_arr[1].split(":");
-		pickup_hour = (pickup_date_time_arr[2]=="PM")?(parseInt(pickup_time_arr[0])+12):pickup_time_arr[0];
+		pickup_hour = (pickup_date_time_arr[2]=="AM")?(parseInt(pickup_time_arr[0])+12):pickup_time_arr[0];
 		pickup_date_time = pickup_date_time_arr[0]+" "+pickup_hour+":"+pickup_time_arr[1];
-
+		//alert(pickup_date_time);
         var usaTime = new Date(Date.parse(pickup_date_time));
 
         if(timeNow.getDate()==usaTime.getDate() && timeNow.getMonth()==usaTime.getMonth() &&timeNow.getFullYear()==usaTime.getFullYear() ){
@@ -1088,7 +1088,7 @@ include 'views/layout/footer_files.php';
                 data= parseInt(datas)
             }
         });
-        //alert(data)
+       // alert(data)
         if (data==1) 		return data;
         else if(data==2) 	return 'Please Select Another Date: The Shop is close at specified day';
         else if (data==3) 	return 'Please Choose Another Time: The Shop is close at specified time';
@@ -1174,7 +1174,7 @@ include 'views/layout/footer_files.php';
 			var pickup_date_time= $('#pickup_date_time').val();
 			pickup_date_time_arr = pickup_date_time.split(' ');
 			pickup_time_arr = pickup_date_time_arr[1].split(":");
-			pickup_hour = (pickup_date_time_arr[2]=="PM")?(parseInt(pickup_time_arr[0])+12):pickup_time_arr[0];
+			pickup_hour = (pickup_date_time_arr[2]=="AM")?(parseInt(pickup_time_arr[0])+12):pickup_time_arr[0];
 			pickup_date_time = pickup_date_time_arr[0]+" "+pickup_hour+":"+pickup_time_arr[1];
 			formData.set("pickup_date_time",pickup_date_time);
             

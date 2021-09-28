@@ -1,6 +1,6 @@
- <section class="breadcrumb-part" data-stellar-offset-parent="true" data-stellar-background-ratio="0.5" style="background-image: url('./images/breadbg1.jpg');max-height: 240px">
+ <section class="breadcrumb-part" data-stellar-offset-parent="true" data-stellar-background-ratio="0.5" style="background-image: url('./images/breadbg1.jpg');min-height: 200px;max-height: 240px">
     <div class="container">
-            <div class="breadcrumb-inner" style="top:45%">
+            <div class="breadcrumb-inner" style="top:40%">
 				<div class="col-md-2 col-xs-12 small-center"></div>
 				<div class="col-md-8 col-xs-12 small-center">
 					<!--<div class="col-md-12 col-xs-12  small-center">
@@ -9,9 +9,9 @@
 					</div>-->
 					<h2 >ORDER FROM MENU BELOW FOR PICKUP</h2>
 				</div>
-				<div class="col-md-2 col-xs-12 small-center hide-xs">
+				<!--<div class="col-md-2 col-xs-12 small-center hide-xs">
 					<img src="images/qr-image.png" style="width:90px; border:2px solid white; border-radius:4px">
-				</div>
+				</div>-->
                 <!--<a href="index.php">Home</a>
                 <span>Items Category</span>-->
                 <!--<div class="col-md-6 col-xs-6  text-left">
@@ -19,7 +19,7 @@
 						<i class="fa fa-file-pdf-o" style="font-size:40px; font-weight:bold; color:red"></i>
 					</a>
                 </div>-->
-				 <div class="col-md-12 col-xs-12  text-right" style='margin-top:2px'>
+				 <div class="col-md-12 col-xs-12  text-center" style='margin-top:2px'>
 					 <span>
 						<a href="/admin/document/BurritoBrothersMenu.pdf" >
 							<i class="fa fa-file-pdf-o" style="font-size:40px; font-weight:bold; color:red; margin-top:5px;"></i>

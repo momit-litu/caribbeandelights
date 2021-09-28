@@ -10,7 +10,7 @@
                 <div class="header-top-inner">
                     <div class="header-top-left">
                         <a href="Tel:<?php echo $mobile_info; ?>" class="top-cell"><img src="images/fon.png" alt=""> <span><?php echo $mobile_info; ?></span></a>
-                        <a href="mailto:<?php echo $email_info; ?>" class="top-email"><span><?php // echo $email_info; ?></span></a>
+                        <a href="mailto:<?php echo $email_info; ?>" class="top-email"><span><?php echo $email_info; ?></span></a>
                     </div>
                     <div class="header-top-right" id="us_account">
                         <div class="social-top" >
