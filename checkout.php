@@ -1126,10 +1126,7 @@ include 'views/layout/footer_files.php';
     }
 
     $('#checkout_submit').click(function(event) {
-        //alert('call')
-        timeValidation = dateCheck()
-        //alert(timeValidation)
-
+        timeValidation = dateCheck();
         event.preventDefault();
 
         var loyalty_value = Math.floor( $('#total_paid_amount').val()/loyalty_reserve_value);
@@ -1178,7 +1175,7 @@ include 'views/layout/footer_files.php';
 			pickup_hour = (pickup_date_time_arr[2]=="PM")?((parseInt(pickup_time_arr[0])<12)?(parseInt(pickup_time_arr[0])+12):parseInt(pickup_time_arr[0])):pickup_time_arr[0];
 			pickup_date_time = pickup_date_time_arr[0]+" "+pickup_hour+":"+pickup_time_arr[1];
 			formData.set("pickup_date_time",pickup_date_time);
-            
+            $('#pre-loader').delay(1000).toggle();
 			$.ajax({
                 url: "includes/controller/ecommerceController.php",
                 type:'POST',
@@ -1187,6 +1184,7 @@ include 'views/layout/footer_files.php';
                 cache:false,
                 contentType:false,processData:false,
                 success: function(data){
+					
 					data = $.trim(data);
 					//alert(data)
                     //alert(json.stringify(data))
@@ -1194,14 +1192,12 @@ include 'views/layout/footer_files.php';
                     //console.log(data.replace(/(^[ \t]*\n)/gm, ""))
 					//alert(($.trim(data)).substring(0, 2));
                     if(data==0 || ($.trim(data)).substring(0, 2)!="KD"){
+						$('#pre-loader').toggle();
                         success_or_error_msg('#logn_reg_error',"danger","Order failed. please check your information properly. You should refresh the page and try again","#checkout_submit" );
                     }
                     else{
                         data = data.replace(/(^[ \t]*\n)/gm, "");
-
-
                         if($('input[name=payment_method]:checked', '#checkout-form').val()==3){
-
                             $('#item_name').val(data+'TakeOut Time:'+$.trim($('#pickup_date_time').val()))
                             $('#item_number').val(data)
                             $('#amount_total').val($('#total_paid_amount').val())
@@ -1210,7 +1206,6 @@ include 'views/layout/footer_files.php';
                             new_formData.append("next_url",project_url+"checkout_confirm.php");
                             new_formData.append("project_url",project_url);
 						
-
                             $.ajax({
                                 url: project_url+"includes/controller/payments.php",
                                 type:'POST',
